@@ -6,7 +6,7 @@ ENV container docker
 
 # Install updates, enable RPMFusion
 RUN yum update -y; yum clean all
-RUN yum install -y openssh-server openssh-clients, rsync;
+RUN yum install -y openssh-server openssh-clients rsync;
 RUN rm -f /etc/ssh/ssh_host_ecdsa_key /etc/ssh/ssh_host_rsa_key && \
     ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_ecdsa_key && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
